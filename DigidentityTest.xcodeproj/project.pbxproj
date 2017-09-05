@@ -17,12 +17,16 @@
 		191C5CCE1F5EAA65000759D5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C5CCC1F5EAA65000759D5 /* NetworkManager.swift */; };
 		191C5CD01F5EAB7C000759D5 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C5CCF1F5EAB7C000759D5 /* URLRequest.swift */; };
 		191C5CD11F5EAB7C000759D5 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C5CCF1F5EAB7C000759D5 /* URLRequest.swift */; };
+		191C5CD21F5EDD8B000759D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927EAF1F5EA3800067059E /* CoreDataManager.swift */; };
+		191C5CD31F5EDD8E000759D5 /* DigidentityTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19927E8B1F5E9DD60067059E /* DigidentityTest.xcdatamodeld */; };
+		191C5CD51F5EDE4C000759D5 /* URLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C5CD41F5EDE4C000759D5 /* URLRequestTests.swift */; };
+		191C5CD71F5EE0D3000759D5 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C5CD61F5EE0D3000759D5 /* CoreDataManagerTests.swift */; };
 		19927E851F5E9DD60067059E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927E841F5E9DD60067059E /* AppDelegate.swift */; };
 		19927E8A1F5E9DD60067059E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19927E881F5E9DD60067059E /* Main.storyboard */; };
 		19927E8D1F5E9DD60067059E /* DigidentityTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19927E8B1F5E9DD60067059E /* DigidentityTest.xcdatamodeld */; };
 		19927E8F1F5E9DD60067059E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19927E8E1F5E9DD60067059E /* Assets.xcassets */; };
 		19927E921F5E9DD60067059E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19927E901F5E9DD60067059E /* LaunchScreen.storyboard */; };
-		19927E9D1F5E9DD60067059E /* DigidentityTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927E9C1F5E9DD60067059E /* DigidentityTestTests.swift */; };
+		19927E9D1F5E9DD60067059E /* PhotoEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927E9C1F5E9DD60067059E /* PhotoEntityTests.swift */; };
 		19927EAC1F5EA1D10067059E /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927EAB1F5EA1D10067059E /* ImageListViewController.swift */; };
 		19927EAE1F5EA20C0067059E /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927EAD1F5EA20C0067059E /* ImageListCell.swift */; };
 		19927EB01F5EA3800067059E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19927EAF1F5EA3800067059E /* CoreDataManager.swift */; };
@@ -44,6 +48,8 @@
 		191C5CC81F5EA4EF000759D5 /* Photo+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Data.swift"; sourceTree = "<group>"; };
 		191C5CCC1F5EAA65000759D5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		191C5CCF1F5EAB7C000759D5 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		191C5CD41F5EDE4C000759D5 /* URLRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestTests.swift; sourceTree = "<group>"; };
+		191C5CD61F5EE0D3000759D5 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		19927E811F5E9DD60067059E /* DigidentityTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigidentityTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19927E841F5E9DD60067059E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19927E891F5E9DD60067059E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +58,7 @@
 		19927E911F5E9DD60067059E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19927E931F5E9DD60067059E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19927E981F5E9DD60067059E /* DigidentityTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigidentityTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19927E9C1F5E9DD60067059E /* DigidentityTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigidentityTestTests.swift; sourceTree = "<group>"; };
+		19927E9C1F5E9DD60067059E /* PhotoEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntityTests.swift; sourceTree = "<group>"; };
 		19927E9E1F5E9DD60067059E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19927EAB1F5EA1D10067059E /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		19927EAD1F5EA20C0067059E /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
@@ -129,8 +135,10 @@
 		19927E9B1F5E9DD60067059E /* DigidentityTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				19927E9C1F5E9DD60067059E /* DigidentityTestTests.swift */,
+				19927E9C1F5E9DD60067059E /* PhotoEntityTests.swift */,
+				191C5CD41F5EDE4C000759D5 /* URLRequestTests.swift */,
 				19927E9E1F5E9DD60067059E /* Info.plist */,
+				191C5CD61F5EE0D3000759D5 /* CoreDataManagerTests.swift */,
 			);
 			path = DigidentityTestTests;
 			sourceTree = "<group>";
@@ -305,10 +313,14 @@
 			files = (
 				191C5CC61F5EA4B3000759D5 /* Photo+CoreDataProperties.swift in Sources */,
 				191C5CC41F5EA4B3000759D5 /* Photo+CoreDataClass.swift in Sources */,
+				191C5CD31F5EDD8E000759D5 /* DigidentityTest.xcdatamodeld in Sources */,
 				191C5CCE1F5EAA65000759D5 /* NetworkManager.swift in Sources */,
 				191C5CD11F5EAB7C000759D5 /* URLRequest.swift in Sources */,
 				191C5CCA1F5EA4EF000759D5 /* Photo+Data.swift in Sources */,
-				19927E9D1F5E9DD60067059E /* DigidentityTestTests.swift in Sources */,
+				191C5CD21F5EDD8B000759D5 /* CoreDataManager.swift in Sources */,
+				19927E9D1F5E9DD60067059E /* PhotoEntityTests.swift in Sources */,
+				191C5CD71F5EE0D3000759D5 /* CoreDataManagerTests.swift in Sources */,
+				191C5CD51F5EDE4C000759D5 /* URLRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

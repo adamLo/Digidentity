@@ -52,7 +52,7 @@ extension Photo {
         return nil
     }
     
-    private func update(with json: [String: Any]) {
+    func update(with json: [String: Any]) {
         
         if let idValue = json[JSONkeys.id] as? String {
         
