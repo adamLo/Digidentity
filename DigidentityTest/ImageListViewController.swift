@@ -24,6 +24,8 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         title = NSLocalizedString("Photos", comment: "Photos scene navigation title")
+        
+        setupTableView()
 
         setupFetchedResultsController()
         
@@ -35,6 +37,46 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK - UI Customization
+    
+    private func setupTableView() {
+        
+        photosTableView.tableFooterView = UIView()
+        
+        addPullToresfresh()
+    }
+    
+    private func addPullToresfresh() {
+        
+        if #available(iOS 6.0, *) {
+            
+            let refreshControl = UIRefreshControl()
+            refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("Fetching photos...", comment: "Photos tableview refresh control title"), attributes: [NSForegroundColorAttributeName: UIColor.darkGray, NSFontAttributeName: UIFont.systemFont(ofSize: 15.0)])
+            refreshControl.tintColor = UIColor.darkGray
+            
+            refreshControl.addTarget(self, action: #selector(self.refreshControlValueChanged(sender:)), for: .valueChanged)
+            
+            photosTableView.refreshControl = refreshControl
+        }
+    }
+    
+    // MARK: - Actions
+    
+    func refreshControlValueChanged(sender: UIRefreshControl) {
+        
+        if !isFetchingPhotos {
+        
+            lastId = nil
+            hasMoreData = true
+            
+            fetchPhotos()
+        }
+        else {
+            
+            sender.endRefreshing()
+        }
     }
     
     // MARK: - TableView
@@ -182,7 +224,7 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
     
     private func fetchPhotos() {
         
-        if !isFetchingPhotos && self.hasMoreData {
+        if !isFetchingPhotos || self.hasMoreData {
             
             isFetchingPhotos = true
             
@@ -199,12 +241,25 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
                     
                     self.hasMoreData = count > 0
                 }
-                else {
-                    
-                    // TODO: Implement error display
-                }
                 
-                // TODO: Implement UI update
+                DispatchQueue.main.async {
+                    
+                    if #available(iOS 6.0, *) {
+                        
+                        if let refreshControl = self.photosTableView.refreshControl {
+                            
+                            if refreshControl.isRefreshing {
+                                
+                                refreshControl.endRefreshing()
+                            }
+                        }
+                    }
+                    
+                    if error != nil {
+                        
+                        // TODO: Display error
+                    }
+                }
             })
         }
     }

@@ -52,6 +52,8 @@ class NetworkManager: NSObject {
         var request = URLRequest(url: url)
         request.configure(for: .get)
         
+        print("Fetching data from \(request.url!.absoluteString)")
+        
         let dataTask = defaultSession.dataTask(with: request) { (data, response, networkError) in
             
             if networkError != nil {
