@@ -135,9 +135,9 @@
 		19927E9B1F5E9DD60067059E /* DigidentityTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				19927E9E1F5E9DD60067059E /* Info.plist */,
 				19927E9C1F5E9DD60067059E /* PhotoEntityTests.swift */,
 				191C5CD41F5EDE4C000759D5 /* URLRequestTests.swift */,
-				19927E9E1F5E9DD60067059E /* Info.plist */,
 				191C5CD61F5EE0D3000759D5 /* CoreDataManagerTests.swift */,
 			);
 			path = DigidentityTestTests;
