@@ -13,7 +13,7 @@ extension Photo {
     
     static let entityName = "Photo"
     
-    private static let idKey      = "id"
+    static let idKey      = "id"
     
     struct JSONkeys {
         
@@ -97,6 +97,9 @@ extension Photo {
             
             var count = 0
             
+            var firstId: String?
+            var lastId: String?
+            
             for item in items {
                 
                 if let id = item[JSONkeys.id] as? String {
@@ -109,8 +112,17 @@ extension Photo {
                     }
                     
                     if photo != nil {
-                    
+                        
                         photo!.update(with: item)
+                        
+                        if count == 0 {
+                            
+                            firstId = photo!.id
+                        }
+                        else {
+                            
+                            lastId = photo!.id
+                        }
                     
                         count += 1
                     }
@@ -121,11 +133,11 @@ extension Photo {
                 
                 try context.save()
                 
-                completion?(count, nil)
+                completion?(count, firstId, lastId, nil)
             }
             catch let cdError {
                 
-                completion?(0, cdError)
+                completion?(0, nil, nil, cdError)
             }
         }
     }

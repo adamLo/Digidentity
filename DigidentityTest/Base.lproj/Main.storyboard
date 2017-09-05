@@ -6,8 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,37 +51,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Yi-ip-cKX">
-                                                    <rect key="frame" x="0.0" y="2" width="97.5" height="97.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="5Yi-ip-cKX" secondAttribute="height" multiplier="1:1" id="6ww-JM-XzQ"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="2" width="113" height="97.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="536-hE-VYC">
-                                                    <rect key="frame" x="105.5" y="2" width="21" height="25"/>
+                                                    <rect key="frame" x="121" y="2" width="21" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRs-Dd-VuT">
-                                                    <rect key="frame" x="131" y="4" width="38.5" height="21"/>
+                                                    <rect key="frame" x="146.5" y="4" width="38.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQj-9q-0R0">
-                                                    <rect key="frame" x="105.5" y="27" width="93" height="21"/>
+                                                    <rect key="frame" x="121" y="27" width="93" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKk-qc-v0P">
-                                                    <rect key="frame" x="203.5" y="27" width="62.5" height="21"/>
+                                                    <rect key="frame" x="219" y="27" width="62.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-JC-IrJ">
-                                                    <rect key="frame" x="105.5" y="48" width="88" height="21"/>
+                                                    <rect key="frame" x="121" y="48" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -92,6 +89,7 @@
                                                 <constraint firstItem="MQj-9q-0R0" firstAttribute="top" secondItem="536-hE-VYC" secondAttribute="bottom" id="F91-Qt-EzC"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Yi-ip-cKX" secondAttribute="bottom" id="JJh-NA-73w"/>
                                                 <constraint firstItem="mRs-Dd-VuT" firstAttribute="leading" secondItem="536-hE-VYC" secondAttribute="trailing" constant="5" id="Qgb-tP-tT3"/>
+                                                <constraint firstItem="5Yi-ip-cKX" firstAttribute="width" secondItem="yHn-RC-ZtW" secondAttribute="width" multiplier="0.3" constant="0.29999999999999999" id="Tfw-kj-HkT"/>
                                                 <constraint firstItem="MQj-9q-0R0" firstAttribute="leading" secondItem="536-hE-VYC" secondAttribute="leading" id="TpL-Pj-rRA"/>
                                                 <constraint firstItem="536-hE-VYC" firstAttribute="leading" secondItem="5Yi-ip-cKX" secondAttribute="trailing" constant="8" id="UKk-qy-ZYo"/>
                                                 <constraint firstItem="5Yi-ip-cKX" firstAttribute="top" secondItem="536-hE-VYC" secondAttribute="bottom" constant="-25" id="Ulr-cs-IOK"/>
@@ -134,6 +132,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aVG-st-Jij"/>
+                    <connections>
+                        <outlet property="photosTableView" destination="2Bg-e8-Q8j" id="z0P-sg-xIQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l3-FH-bmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

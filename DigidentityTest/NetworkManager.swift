@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias PaginatedFetchCompletionBlockType = ((_ fetchCount: Int, _ error: Error?) -> ())
+typealias PaginatedFetchCompletionBlockType = ((_ fetchCount: Int, _ firstId: String?, _ lastId: String?, _ error: Error?) -> ())
 
 struct BackendConfiguration {
     
@@ -42,10 +42,12 @@ class NetworkManager: NSObject {
             queryItems.append(URLQueryItem(name: BackendConfiguration.paramMaxId, value: maxId!))
         }
         
-        var urlComponents = URLComponents(url: BackendConfiguration.baseURL.appendingPathComponent(BackendConfiguration.itemsPath), resolvingAgainstBaseURL: false)!
+        let baseURL = BackendConfiguration.baseURL.appendingPathComponent(BackendConfiguration.itemsPath)
+        
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)!
         urlComponents.queryItems = queryItems
         
-        let url = urlComponents.url!
+        let url = queryItems.count > 0 ? urlComponents.url! : baseURL
         
         var request = URLRequest(url: url)
         request.configure(for: .get)
@@ -54,13 +56,13 @@ class NetworkManager: NSObject {
             
             if networkError != nil {
                 
-                completion?(0, networkError)
+                completion?(0, nil, nil, networkError)
             }
             else {
             
                 if data == nil || data!.isEmpty {
                     
-                    completion?(0, nil)
+                    completion?(0, nil, nil, nil)
                 }
                 else {
                     
@@ -74,12 +76,12 @@ class NetworkManager: NSObject {
                         }
                         else {
                             
-                            completion?(0, NSError(domain: "Digidentity", code: -666, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Error parsing request", comment: "Error message when unable to parse response")]))
+                            completion?(0, nil, nil, NSError(domain: "Digidentity", code: -666, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Error parsing request", comment: "Error message when unable to parse response")]))
                         }
                     }
                     catch let jsonError {
                         
-                        completion?(0, jsonError)
+                        completion?(0, nil, nil, jsonError)
                     }
                 }
             }

@@ -23,14 +23,37 @@ class ImageListCell: UITableViewCell {
     @IBOutlet weak var textContentLabel: UILabel!
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        // Initialization code
+        
+        idTitleLabel.text = NSLocalizedString("ID:", comment: "ID title in list cell")
+        confidenceTitleLabel.text = NSLocalizedString("Confidence:", comment: "Confidence title in list cell")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setup(with photo: Photo) {
+        
+        idLabel.text = photo.id ?? NSLocalizedString("N/A", comment: "Not Available placeholder")
+        confidenceLabel.text = String(format: "%0.5f", photo.confidence)
+        textContentLabel.text = photo.text
+        
+        photoImageView.image = nil
+        if let imgString = photo.img {
+        
+            if let data = Data(base64Encoded: imgString) {
+                
+                if let image = UIImage(data: data) {
+                    
+                    photoImageView.image = image
+                }
+            }
+        }
+        
     }
 
 }
